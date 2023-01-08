@@ -61,7 +61,7 @@ while True:
     move_coords = None
 
     p2 = CNN_model_1
-    p1 = CNN_model_1
+    p1 = alphago
 
     turn_counter = 0
 
