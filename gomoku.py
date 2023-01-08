@@ -27,7 +27,7 @@ p1_wins = 0
 p2_wins = 0
 
 while True:
-    print(f"Games played: {game_counter}, p1 wins: {100 * p1_wins / (max(1, game_counter))}%, p2 wins: {100 * p2_wins / (max(1, game_counter))}%")
+    print(f"Games played: {game_counter}, CNNPenguin2: {100 * p1_wins / (max(1, game_counter))}%, AlphagoJR: {100 * p2_wins / (max(1, game_counter))}%")
     game_counter += 1
     screen.fill(WHITE)
     pygame.display.update()
@@ -60,8 +60,8 @@ while True:
     player = 1
     move_coords = None
 
-    p2 = CNN_model_1
-    p1 = alphago
+    p2 = alphago
+    p1 = CNN_model_1
 
     turn_counter = 0
 
