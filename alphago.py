@@ -1,6 +1,6 @@
 from copy import deepcopy
 from math import inf
-
+import numpy as np
 
 class TreeNode:
 
@@ -143,9 +143,11 @@ class AlphaGo:
                     value = self.minimax(TreeNode(board, color, color * -1), False)
                     moves[(i, j)] = value
                     board[i][j] = 0
-        keys = list(moves.keys())
-        values = list(moves.values())
-        return keys[values.index(max(values))]
+        keys = np.array(list(moves.keys()))
+        values = np.array(list(moves.values()))
+        keys = keys[values == max(values)]
+        move = keys[np.random.choice(np.arange(0, len(keys)))]
+        return move
 
     def minimax(self, tree, player, alpha=-inf, beta=inf):
         if len(tree.children) == 0:

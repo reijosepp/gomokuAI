@@ -53,8 +53,8 @@ class Graphics:
             tencolor = (100,0,50)
             twentycolor = (200,50,50)
             
-        ten = font.render("17x17", True, tencolor)
-        twenty = font.render("20x20", True, twentycolor)
+        ten = font.render("15x15", True, tencolor)
+        twenty = font.render("15x15", True, twentycolor)
         
         screen.blit(ten, (30, 280))
         ten_rect = ten.get_rect()
@@ -64,11 +64,11 @@ class Graphics:
             twenty_rect = twenty.get_rect()
             twenty_rect.x, twenty_rect.y = (30, 320)
             if twenty_rect.collidepoint(pygame.mouse.get_pos()) and dim_state == 10:
-                twenty = font.render("20x20", True, (255,0,0))
+                twenty = font.render("15x15", True, (255,0,0))
                 screen.blit(twenty,(30,320))
         
         if ten_rect.collidepoint(pygame.mouse.get_pos()) and dim_state != 10:
-            ten = font.render("17x17", True, (255,0,0))
+            ten = font.render("15x15", True, (255,0,0))
             screen.blit(ten, (30, 280))
             
         if gametype_state == 0:
@@ -146,14 +146,14 @@ class Graphics:
     def menu_click(self, mouse, dim, gametype):
         start = False
         if round(mouse[0]) in range(30,128) and round(mouse[1]) in range(280, 315):
-            dim = 17
+            dim = 15
         if round(mouse[0]) in range(30,138) and round(mouse[1]) in range(320, 355) and gametype==0:
-            dim = 20
+            dim = 15
         if round(mouse[0]) in range(230,393) and round(mouse[1]) in range(280, 315):
             gametype = 0
         if round(mouse[0]) in range(230,313) and round(mouse[1]) in range(320, 355):
             gametype = 1
-            dim = 17
+            dim = 15
         if round(mouse[0]) in range(430,568) and round(mouse[1]) in range(280, 315) and gametype != 0:
             gametype = 1
         if round(mouse[0]) in range(430,566) and round(mouse[1]) in range(320, 355) and gametype != 0:
@@ -192,7 +192,3 @@ class Graphics:
         pos_x = self.padding + self.spacing * last_move[1]
         pos_y = self.padding + self.spacing * last_move[0]
         pygame.draw.rect(screen, (255, 0, 0), [pos_x, pos_y, self.spacing + 1, self.spacing + 1], 1)
-            
-        
-            
-        

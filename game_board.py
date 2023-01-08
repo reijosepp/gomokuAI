@@ -3,7 +3,8 @@ class GameBoard:
     def __init__(self, rows, columns):
         self.rows = rows
         self.columns = columns
-        self.board = [[0 for j in range(columns)] for i in range(rows)]
+        self.board = [[0 for _ in range(columns)] for _ in range(rows)]
+
     
     def get_board(self):
         return self.board
